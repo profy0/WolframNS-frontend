@@ -2,26 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
 
-## Development server
+Среда разработки: VS Code
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Страница авторизации: 
+![image](https://github.com/profy0/WolframNS-frontend/assets/95244299/6682fec8-53c3-4b36-b0d1-c32942be2b90)
 
-## Code scaffolding
+Страница регистрации:
+![image](https://github.com/profy0/WolframNS-frontend/assets/95244299/dfb97bc3-ccac-4165-bb68-1fabff65d118)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+После регистрации пользователь может просмотреть всех зарегистрированных пользователей (временная функция, после будет доступна только для администраторов).
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Структура проекта: 
+![image](https://github.com/profy0/WolframNS-frontend/assets/95244299/13b6c276-ad2c-43b1-b9aa-2237ae61b567)
