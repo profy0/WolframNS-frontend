@@ -1,0 +1,21 @@
+<div class="parent">
+
+<div class="container">
+    <h1>WolframNS</h1>
+    
+    <form>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="registerObj.firstname" placeholder="Enter your first name" required>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="registerObj.lastname" placeholder="Enter your last name" required>
+      <input type="text" id="email" name="email" [(ngModel)]="registerObj.email" placeholder="Enter your email" required>
+      <input type="password" id="password" name="password" [(ngModel)]="registerObj.password" placeholder="Enter your password" required>
+      
+      <div class="btn-container">
+        <button class="btn" type="button" (click)="onRegister()">Sign Up</button>
+      </div>
+    </form>
+    
+    <p class="signup-link"><span>Already have an account?</span> <a routerLink="/login">Sign In</a></p>
+  </div>
+
+</div>
+

@@ -1,0 +1,8 @@
+<div class="parent">
+    <div *ngFor="let user of users" class="container">
+      <h1 class="user-name">{{ user.firstname }} {{ user.lastname }}</h1>
+      <p>Email: {{ user.email }}</p>
+      <p>Role: {{ user.role }}</p>
+      <p>Account Status: {{ user.enabled ? 'Enabled' : 'Disabled' }}</p>
+    </div>
+  </div>

@@ -1,19 +1,38 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { customInterceptor } from './services/custom.interceptor';
+import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    LayoutComponent,
+    DashboardComponent,
+    RegisterComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: customInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
