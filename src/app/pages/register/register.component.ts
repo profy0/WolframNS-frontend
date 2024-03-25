@@ -19,6 +19,7 @@ export class RegisterComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   onRegister() {
+    localStorage.setItem('loginTOken', "");
     this.http.post('http://localhost:8080/api/v1/auth/register', this.registerObj).subscribe((res:any)=>{
           alert('Registration Success');
           localStorage.setItem('loginTOken', res.token);

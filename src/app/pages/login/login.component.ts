@@ -16,11 +16,12 @@ export class LoginComponent {
     constructor(private http: HttpClient, private router: Router) {}
 
     onLogin() {
+      localStorage.setItem('loginTOken', "");
       this.http.post('http://localhost:8080/api/v1/auth/authenticate', this.loginObj).subscribe((res:any)=>{
           if(res.result) {
             alert('login Success');
             localStorage.setItem('loginTOken', res.token);
-            this.router.navigateByUrl('/dashboard');
+            this.router.navigateByUrl('/main');
             
           } else {
             alert(res.token);

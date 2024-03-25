@@ -4,6 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { MainComponent } from './pages/main/main.component';
+import { CalculationComponent } from './pages/calculation/calculation.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,13 @@ const routes: Routes = [
   {
     path:'registration',
     component: RegisterComponent
+  },
+  { path:'main',
+    component: MainComponent
+  },
+  {
+    path:'calculations',
+    component: CalculationComponent
   },
   {
     path:'',
@@ -26,13 +35,13 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo:'login',
+    redirectTo:'main',
     pathMatch:'full'
   },
   
   {
     path:'**',
-    component: LoginComponent
+    component: MainComponent
   }
 
 

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
+  
+  messageForReg = "";
+  token : string = "";
+
+  checkToken() {
+    
+  }
 
 }

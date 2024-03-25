@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { customInterceptor } from './services/custom.interceptor';
 import { MainComponent } from './pages/main/main.component';
+import { CalculationComponent } from './pages/calculation/calculation.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MainComponent } from './pages/main/main.component';
     LayoutComponent,
     DashboardComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    CalculationComponent
   ],
   imports: [
     BrowserModule,
