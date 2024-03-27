@@ -6,6 +6,7 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { MainComponent } from './pages/main/main.component';
 import { CalculationComponent } from './pages/calculation/calculation.component';
+import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   {
@@ -16,13 +17,6 @@ const routes: Routes = [
     path:'registration',
     component: RegisterComponent
   },
-  { path:'main',
-    component: MainComponent
-  },
-  {
-    path:'calculations',
-    component: CalculationComponent
-  },
   {
     path:'',
     component: LayoutComponent,
@@ -30,6 +24,18 @@ const routes: Routes = [
       {
         path:'dashboard',
         component: DashboardComponent
+      },
+      {
+        path:'main',
+        component: MainComponent
+      },
+      {
+        path:'calculations',
+        component: CalculationComponent
+      },
+      {
+        path:'profile',
+        component: UserComponent
       }
     ]
   },

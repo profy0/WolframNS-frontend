@@ -1,18 +1,47 @@
 <head>
     <title>Моя страница</title>
-    <style>
-        header {
-            display: flex;
-            justify-content: flex-end;
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <p> TODO {{ messageForReg }} </p>
-    </header>
+    <div class="header">
+
+        <div class="header-left">
+            <h1>WolframNS</h1>
+        </div>
+        <div class="header-right">
+            <div class="btn-container">
+                <button class="btn">About Us</button>
+                <button class="btn">Chat</button>
+                
+                <div *ngIf="authService.isAuthenticated; else guest">
+                    <button class="btn" (click)="logout()">Logout</button>
+                    <p>Welcome, <a routerLink="/profile">{{ authService.firstname }} </a> </p>
+                  </div>
+                  <ng-template #guest>
+                    <button class="btn" (click)="onLogin()">Sign In</button>
+                  </ng-template>
+            </div>
+
+            <div class="language-selector">
+                <img src="assets/planet_icon.png" alt="Language Selector" width="20" height="20">
+                <select class = "selector">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                </select>
+            </div>
+            
+        </div>
+
+    </div>
+    
+    <router-outlet></router-outlet>
+
+    <div class="footer">
+
+        <p> WolframNS, 2024 </p>
+
+    </div>
 </body>
 
-<router-outlet></router-outlet>
+
+
+

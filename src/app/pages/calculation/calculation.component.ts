@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-calculation',
@@ -7,16 +10,34 @@ import { Component } from '@angular/core';
 })
 export class CalculationComponent {
 
-  toCalc = "";
+  
+  constructor(
+    private http: HttpClient, 
+    private router: Router,
+    private authService: AuthService
+    ) {}
 
+  toCalc: any = {
+    "toCalc": ""
+  }
   result = "";
 
   calculation() {
-    try {
+
+    console.log(this.authService.isAuthenticated);
+
+    if(!this.authService.isAuthenticated) localStorage.setItem('loginTOken', ""); 
+
+
+    this.http.post('http://localhost:8080/calculation', this.toCalc).subscribe((res:any)=>{
+      this.result = res.result;
+    })
+
+  /*  try {
       this.result = eval(this.toCalc);
     } catch (error) {
       this.result = "Ошибка: " + error;
-    }
+    }*/
   }
 
 }

@@ -12,6 +12,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { customInterceptor } from './services/custom.interceptor';
 import { MainComponent } from './pages/main/main.component';
 import { CalculationComponent } from './pages/calculation/calculation.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CalculationComponent } from './pages/calculation/calculation.component'
     DashboardComponent,
     RegisterComponent,
     MainComponent,
-    CalculationComponent
+    CalculationComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
