@@ -1,81 +1,82 @@
 .parent {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    max-width: 300px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    text-align: center;
-    position: relative; 
-  }
-  
-  h1 {
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 0;
-    position: absolute; 
-    top: -80px; 
-    left: 50%; 
-    transform: translateX(-50%);
-  }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 80%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #000000;
-    margin-bottom: 10px;
-  }
-  
-  .btn-container {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: orange;
-    color: black;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 1%;
-  }
-  
-  .btn:hover {
-    opacity: 0.8;
-  }
-  
-  .signup-link {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .signup-link span {
-    color: black;
-  }
-  
-  .signup-link a {
-    color: orange;
-  }
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  text-align: center;
+  position: relative; 
+}
+
+h1 {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  position: absolute; 
+  top: -80px; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1%;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link span {
+  color: black;
+}
+
+.signup-link a {
+  color: orange;
+}
+

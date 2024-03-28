@@ -11,7 +11,16 @@
             <div class="btn-container">
                 <button class="btn btn-equal-size">About</button>
                 <button class="btn btn-equal-size">Chat</button>
-                <button class="btn btn-equal-size" (click)="onLogin()">Sign In</button>
+                
+
+                <div *ngIf="authService.isAuthenticated; else guest" class="horizontal-layout">
+                    <button class="btn btn-equal-size" (click)="logout()">Logout</button>
+                    <p>Welcome, <a routerLink="/profile">{{ authService.firstname }} </a> </p>
+                </div>
+                <ng-template #guest>
+                    <button class="btn btn-equal-size" (click)="onLogin()">Sign In</button>
+                </ng-template>
+
             </div>
             
             <div class="language-selector">

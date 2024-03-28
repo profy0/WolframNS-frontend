@@ -71,3 +71,12 @@
 .welcome-container {
   margin-right: 10px; 
 }
+
+.horizontal-layout {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-layout > * {
+  margin-right: 10px;
+}
