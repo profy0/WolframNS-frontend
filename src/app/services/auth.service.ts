@@ -12,7 +12,8 @@ export class AuthService {
   private userInfo: any = {
       "firstname": "",
       "lastname": "",
-      "email": ""
+      "email": "",
+      "password": ""
   };
 
   constructor(
@@ -33,6 +34,10 @@ export class AuthService {
   }
 
   get email() {
+    return this.userInfo.email;
+  }
+
+  get password() {
     return this.userInfo.email;
   }
 
