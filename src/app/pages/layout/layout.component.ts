@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout',
@@ -16,8 +17,18 @@ export class LayoutComponent {
   constructor(
     private http: HttpClient,
     private router: Router,
-    public authService: AuthService
-  ) {}
+    public authService: AuthService,
+    private translate: TranslateService
+  ) {
+    translate.setDefaultLang('en');
+  }
+
+  switchLanguage(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.translate.use(selectElement.value);
+  }
+  
+  
 
   onLogin() {
       this.router.navigateByUrl('/login');
