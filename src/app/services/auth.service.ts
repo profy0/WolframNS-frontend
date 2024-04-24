@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -7,9 +7,11 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private _isAuthenticated = false;     // TODO better to keep it in storage
+  private _isAuthenticated = false;    // TODO better to keep it in storage
 
-  private userInfo: any = {
+  public static readonly serverIP = 'https://8a27-37-45-206-36.ngrok-free.app';
+
+  public userInfo: any = {
       "firstname": "",
       "lastname": "",
       "email": "",
@@ -43,13 +45,21 @@ export class AuthService {
 
   login() {
     this._isAuthenticated = true;
-    this.http.get('http://localhost:8080/user/me').subscribe((res:any)=>{
+    this.http.get(AuthService.serverIP + '/user/me', {
+      headers: new HttpHeaders({
+        'ngrok-skip-browser-warning': 'true'
+      })
+    }).subscribe((res:any)=>{
       this.userInfo = res;
     });
   }
 
   logout() {
-    this.http.get('http://localhost:8080/api/v1/auth/logout').subscribe((res:any)=>{})
+    this.http.get(AuthService.serverIP + '/api/v1/auth/logout',{
+      headers: new HttpHeaders({
+        'ngrok-skip-browser-warning': 'true'
+      })
+    }).subscribe((res:any)=>{})
     this._isAuthenticated = false;
     localStorage.setItem('loginTOken', "");
   }

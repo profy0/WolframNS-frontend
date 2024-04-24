@@ -29,7 +29,7 @@ export class CalculationComponent {
     if(!this.authService.isAuthenticated) localStorage.setItem('loginTOken', ""); 
 
 
-    this.http.post('http://localhost:8080/calculation', this.toCalc).subscribe((res:any)=>{
+    this.http.post(AuthService.serverIP + '/calculation', this.toCalc).subscribe((res:any)=>{
       this.result = res.result;
     })
 

@@ -21,7 +21,7 @@ export class RegisterComponent {
 
   onRegister() {
     localStorage.setItem('loginTOken', "");
-    this.http.post('http://localhost:8080/api/v1/auth/register', this.registerObj).subscribe((res:any)=>{
+    this.http.post(AuthService.serverIP + '/api/v1/auth/register', this.registerObj).subscribe((res:any)=>{
          // alert('Registration Success');
           localStorage.setItem('loginTOken', res.token);
           this.authService.login();

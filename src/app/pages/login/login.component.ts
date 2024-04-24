@@ -24,7 +24,7 @@ export class LoginComponent {
 
     onLogin() {
       localStorage.setItem('loginTOken', "");
-      this.http.post('http://localhost:8080/api/v1/auth/authenticate', this.loginObj).subscribe((res:any)=>{
+      this.http.post(AuthService.serverIP + '/api/v1/auth/authenticate', this.loginObj).subscribe((res:any)=>{
           if(res.result) {
             //alert('login success');
             localStorage.setItem('loginTOken', res.token);

@@ -13,11 +13,6 @@ export class LayoutComponent {
   messageForReg = "";
   token : string = "";
 
-  checkToken() {
-    
-  }
-
-
   constructor(
     private http: HttpClient,
     private router: Router,

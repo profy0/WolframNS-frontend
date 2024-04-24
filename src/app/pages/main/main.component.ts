@@ -11,6 +11,8 @@ export class MainComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  
+
   onLog() {
       this.router.navigateByUrl('/login');
   }
