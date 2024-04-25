@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private _isAuthenticated = false;    // TODO better to keep it in storage
+  private _isAuthenticated = false;
 
-  public static readonly serverIP = 'https://8a27-37-45-206-36.ngrok-free.app';
+  public static readonly serverIP = 'https://df27-217-21-43-190.ngrok-free.app';
 
   public userInfo: any = {
       "firstname": "",
