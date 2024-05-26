@@ -13,6 +13,7 @@ import { SimpleCalculationsComponent } from './pages/calculationPages/simple-cal
 import { MatrixComponent } from './pages/calculationPages/matrix/matrix.component';
 import { TrigonometryComponent } from './pages/calculationPages/trigonometry/trigonometry.component';
 import { ConversionComponent } from './pages/calculationPages/conversion/conversion.component';
+import { PrivateChatComponent } from './pages/private-chat/private-chat.component';
 
 const routes: Routes = [
   {
@@ -69,7 +70,12 @@ const routes: Routes = [
         path:'about',
         component: AboutComponent
       }
+      
     ]
+  },
+  {
+    path:'private-chat',
+    component: PrivateChatComponent
   },
   {
     path:'',

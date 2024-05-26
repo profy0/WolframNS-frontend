@@ -1,98 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Страница пользователя</title>
-    <link rel="stylesheet" href="user.component.css">
+<!-- user.component.html -->
 
-<script>
-    var editing = false;
-
-    function changeAvatar(event) {
-        var avatar = document.getElementById('avatarPreview');
-        var file = event.target.files[0];
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            avatar.style.backgroundImage = 'url(' + e.target.result + ')';
-        };
-
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
-
-    function updateName() {
-        var firstname = document.getElementById('firstnameColumn').textContent.trim();
-        var lastname = document.getElementById('lastnameColumn').textContent.trim();
-        var nameContainer = document.getElementById('nameContainer');
-        nameContainer.textContent = firstname + ' ' + lastname;
-    }
-
-    function editValue(button) {
-        if (!editing) {
-            editing = true;
-            var column = button.parentNode.children[1];
-            var value = column.textContent.trim();
-            column.innerHTML = '<input class="edit-input" type="text" value="' + value + '">';
-            button.textContent = 'Save';
-            button.onclick = function() { saveValue(button); };
-        }
-    }
-
-    function saveValue(button) {
-        var column = button.parentNode.children[1];
-        var input = column.querySelector('.edit-input');
-        column.innerHTML = input.value;
-        button.textContent = 'Edit';
-        button.onclick = function() { editValue(button); };
-        editing = false; 
-
-        updateName(); 
-    }
-
-    window.onload = function() {
-        updateName();
-        var avatar = document.getElementById('avatarPreview');
-        avatar.style.backgroundImage = 'url(default.png)'; 
-    };
-</script>
-</head>
-
-<body>
-    <div class="container">
-        <input type="file" id="avatarInput" style="display: none;" accept="image/*" onchange="changeAvatar(event)">
-        <label for="avatarInput" class="avatar-container">
-            <div class="avatar" id="avatarPreview"></div>
-        </label>
-
-        <div class="name-container" id="nameContainer">
-            
-        </div>
-
-        <div class="table-container">
-            <div class="table">
-                <div class="table-row">
-                    <div class="table-column">Firstname</div>
-                    <div class="table-column" id="firstnameColumn">{{ authService.firstname }}</div>
-                    <button class="edit-button" onclick="editValue(this)">Edit</button>
-                </div>
-                <div class="table-row">
-                    <div class="table-column">Lastname</div>
-                    <div class="table-column" id="lastnameColumn">{{ authService.lastname }}</div>
-                    <button class="edit-button" onclick="editValue(this)">Edit</button>
-                </div>
-                <div class="table-row">
-                    <div class="table-column">Email</div>
-                    <div class="table-column">{{ authService.email }}</div>
-                    <button class="edit-button" onclick="editValue(this)">Edit</button>
-                </div>
-                <div class="table-row">
-                    <div class="table-column">Password</div>
-                    <div class="table-column">{{ authService.password }}</div>
-                    <button class="edit-button" onclick="editValue(this)">Edit</button>
-                </div>
-            </div>
-        </div>
+<div class="user-profile">
+    <div class="user-details">
+      <h2>{{ authService.firstname }}</h2>
+      <p>Email: {{ authService.lastname }}</p>
+      <p>Phone: {{ authService.email }}</p>
     </div>
-</body>
-</html>
+  
+    <div class="user-actions">
+      <button class="message-btn" (click)="redirectToMessages()">Go to Messages</button>
+    </div>
+  </div>
+  

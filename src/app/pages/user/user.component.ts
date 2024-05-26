@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { PrivateChatComponent } from '../private-chat/private-chat.component';
 
 @Component({
   selector: 'app-user',
@@ -10,8 +12,11 @@ import { AuthService } from '../../services/auth.service';
 
 export class UserComponent {
   
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
-
+  redirectToMessages() {
+    this.router.navigateByUrl('/private-chat')
+    
+  }
 
 }

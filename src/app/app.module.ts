@@ -22,6 +22,7 @@ import { SimpleCalculationsComponent } from './pages/calculationPages/simple-cal
 import { MatrixComponent } from './pages/calculationPages/matrix/matrix.component';
 import { TrigonometryComponent } from './pages/calculationPages/trigonometry/trigonometry.component';
 import { ConversionComponent } from './pages/calculationPages/conversion/conversion.component';
+import { PrivateChatComponent } from './pages/private-chat/private-chat.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -42,7 +43,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SimpleCalculationsComponent,
     MatrixComponent,
     TrigonometryComponent,
-    ConversionComponent
+    ConversionComponent,
+    PrivateChatComponent
   ],
   imports: [
     BrowserModule,
