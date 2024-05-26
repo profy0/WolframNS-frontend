@@ -16,6 +16,12 @@ import { UserComponent } from './pages/user/user.component';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ChatComponent } from './pages/chat/chat.component';
+import { AboutComponent } from './pages/about/about.component';
+import { SimpleCalculationsComponent } from './pages/calculationPages/simple-calculations/simple-calculations.component';
+import { MatrixComponent } from './pages/calculationPages/matrix/matrix.component';
+import { TrigonometryComponent } from './pages/calculationPages/trigonometry/trigonometry.component';
+import { ConversionComponent } from './pages/calculationPages/conversion/conversion.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -30,7 +36,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     RegisterComponent,
     MainComponent,
     CalculationComponent,
-    UserComponent
+    UserComponent,
+    ChatComponent,
+    AboutComponent,
+    SimpleCalculationsComponent,
+    MatrixComponent,
+    TrigonometryComponent,
+    ConversionComponent
   ],
   imports: [
     BrowserModule,

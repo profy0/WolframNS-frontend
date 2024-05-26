@@ -1,0 +1,27 @@
+<div class="matrix-container">
+    <h1>Работа с матрицами</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div>
+            <label for="matrix1">Матрица 1 (разделяйте числа пробелом и строки переносом):</label>
+            <textarea id="matrix1" [(ngModel)]="matrix1" name="matrix1" required></textarea>
+        </div>
+        <div>
+            <label for="matrix2">Матрица 2 (разделяйте числа пробелом и строки переносом):</label>
+            <textarea id="matrix2" [(ngModel)]="matrix2" name="matrix2" required></textarea>
+        </div>
+        <div>
+            <label for="operation">Операция:</label>
+            <select id="operation" [(ngModel)]="operation" name="operation" required>
+                <option value="add">Сложение</option>
+                <option value="multiply">Умножение</option>
+                <option value="transpose">Транспонирование</option>
+            </select>
+        </div>
+        <button type="submit">Вычислить</button>
+    </form>
+    
+    <div *ngIf="result">
+        <h2>Результат:</h2>
+        <pre>{{ result }}</pre>
+    </div>
+</div>

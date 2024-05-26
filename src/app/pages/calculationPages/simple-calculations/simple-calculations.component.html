@@ -1,0 +1,9 @@
+<div>
+    <label for="expressionInput">Введите выражение:</label>
+    <input type="text" id="expressionInput" [(ngModel)]="expression.toCalc" (keyup.enter)="calculation()">
+    <button (click)="calculation()">Вычислить</button>
+  </div>
+  <div *ngIf="result !== null">
+    <p>Результат: {{ result }}</p>
+  </div>
+  

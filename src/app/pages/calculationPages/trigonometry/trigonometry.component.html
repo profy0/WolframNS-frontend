@@ -1,0 +1,22 @@
+<div>
+    <h2>Trigonometry Calculator</h2>
+    
+    <div>
+      <label for="angle">Angle (in degrees):</label>
+      <input type="number" id="angle" [(ngModel)]="angleDegrees" step="0.01">
+    </div>
+    
+    <div>
+      <label for="terms">Number of Terms:</label>
+      <input type="number" id="terms" [(ngModel)]="terms" min="1">
+    </div>
+    
+    <button (click)="calculate()">Calculate</button>
+    
+    <div *ngIf="result !== null && result !== undefined">
+        <p>Sin({{ angleDegrees }}) = {{ result.sin }}</p>
+        <p>Cos({{ angleDegrees }}) = {{ result.cos }}</p>
+      </div>
+      
+  </div>
+  

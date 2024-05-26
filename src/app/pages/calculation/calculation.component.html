@@ -1,14 +1,6 @@
-<div class="parent">
-
-
-    <div class="container">
-
-
-        <input type="text" id="toCalc" name="toCalc" [(ngModel)]="toCalc.toCalc" placeholder="Введите выражение здесь">
-        <p id="output">Result: {{ result }} </p>
-        <button class = "btn" (click)="calculation()">Calculate</button>
-
-
+<div class="calculation-container">
+    <div class="calculation-tile" *ngFor="let operation of operations" (click)="navigateTo(operation.route)">
+      <h3>{{ operation.name }}</h3>
     </div>
-
-</div>
+  </div>
+  <router-outlet></router-outlet>

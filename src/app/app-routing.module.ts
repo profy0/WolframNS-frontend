@@ -7,6 +7,12 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MainComponent } from './pages/main/main.component';
 import { CalculationComponent } from './pages/calculation/calculation.component';
 import { UserComponent } from './pages/user/user.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { AboutComponent } from './pages/about/about.component';
+import { SimpleCalculationsComponent } from './pages/calculationPages/simple-calculations/simple-calculations.component';
+import { MatrixComponent } from './pages/calculationPages/matrix/matrix.component';
+import { TrigonometryComponent } from './pages/calculationPages/trigonometry/trigonometry.component';
+import { ConversionComponent } from './pages/calculationPages/conversion/conversion.component';
 
 const routes: Routes = [
   {
@@ -31,11 +37,37 @@ const routes: Routes = [
       },
       {
         path:'calculations',
-        component: CalculationComponent
+        component: CalculationComponent,
+        children: [
+          {
+            path:'simple-calculations',
+            component: SimpleCalculationsComponent
+          },
+          {
+            path:'matrix-operations',
+            component: MatrixComponent
+          },
+          {
+            path:'trigonometry-operations',
+            component: TrigonometryComponent
+          },
+          {
+            path:'conversion-operations',
+            component: ConversionComponent
+          }
+        ]
       },
       {
         path:'profile',
         component: UserComponent
+      },
+      {
+        path:'chat',
+        component: ChatComponent
+      },
+      {
+        path:'about',
+        component: AboutComponent
       }
     ]
   },

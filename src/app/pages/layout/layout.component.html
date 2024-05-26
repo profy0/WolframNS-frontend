@@ -9,10 +9,10 @@
         </div>
         <div class="header-right">
             <div class="btn-container">
-                <button class="btn btn-equal-size">{{ 'About' | translate }}</button>
-                <button class="btn btn-equal-size">{{ 'Chat' | translate }} </button>
-                
-
+                <button class="btn btn-equal-size" (click)="onAbout()">{{ 'About' | translate }}</button>
+                <button class="btn btn-equal-size" (click)="onChat()">{{ 'Chat' | translate }} </button>
+                <button class="btn" (click)="onCalculation()">{{ 'Calculation' | translate }} </button>
+        
                 <div *ngIf="authService.isAuthenticated; else guest" class="horizontal-layout">
                     <button class="btn btn-equal-size" (click)="logout()">{{ 'Logout' | translate }}</button>
                     <p>Welcome, <a routerLink="/profile">{{ authService.firstname }} </a> </p>
@@ -26,11 +26,10 @@
             <div class="language-selector">
                 <img src="assets/planet_icon.png" alt="Language Selector" width="20" height="20">
                 <select class="selector" (change)="switchLanguage($event)">
-                    <option value="en">English</option>
                     <option value="ru">Русский</option>
+                    <option value="en">English</option>
                 </select>
             </div>
-            
         </div>
     </div>
 

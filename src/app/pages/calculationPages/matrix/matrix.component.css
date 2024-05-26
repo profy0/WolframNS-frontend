@@ -1,0 +1,39 @@
+.matrix-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.matrix-container h1 {
+    text-align: center;
+}
+
+.matrix-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.matrix-container label {
+    margin-top: 10px;
+}
+
+.matrix-container textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 5px;
+}
+
+.matrix-container select, .matrix-container button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.matrix-container pre {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+}
