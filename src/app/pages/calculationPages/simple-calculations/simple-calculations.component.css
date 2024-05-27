@@ -78,3 +78,13 @@
   .signup-link a {
     color: orange;
   }
+
+  button {
+    background-color: orange;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color: #000000;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
