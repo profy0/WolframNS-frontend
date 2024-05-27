@@ -33,39 +33,39 @@ export class ChatComponent implements OnInit {
       this.isChatHidden = false;
       const socket = new SockJS(AuthService.serverIP + '/ws');
       this.stompClient = Stomp.over(socket);
-      this.stompClient.connect({}, this.onConnected, this.onError);
+      this.stompClient.connect({"ngrok-skip-browser-warning": "true"}, this.onConnected, this.onError);
     }
   }
 
   onConnected = () => {
     // subscribe to public topic
     this.stompClient.subscribe('/topic/public', (payload) => {
-      var msg = JSON.parse(payload.body);
-      var msgElement = this.document.createElement('li');
+      const msg = JSON.parse(payload.body);
+      const msgElement = this.document.createElement('li');
 
       if (msg.type === 'JOIN') {
         msgElement.classList.add('event-message');
-        msg.content = msg.senderId + ' joined!';
-      } else if (msg.type === 'LEAVER') {
+        msg.content = `${msg.senderId} joined!`;
+      } else if (msg.type === 'LEAVE') {
         msgElement.classList.add('event-message');
-        msg.content = msg.senderId + ' left!';
+        msg.content = `${msg.senderId} left!`;
       } else {
         msgElement.classList.add('chat-message');
 
-        var avatarElement = this.document.createElement('i');
-        var avatarText = this.document.createTextNode(msg.senderId[0]);
+        const avatarElement = this.document.createElement('i');
+        const avatarText = this.document.createTextNode(msg.senderId[0]);
         avatarElement.appendChild(avatarText);
         avatarElement.style.backgroundColor = this.getAvatarColor(msg.senderId);
         msgElement.appendChild(avatarElement);
 
-        var usernameElement = this.document.createElement('span');
-        var usernameText = this.document.createTextNode(msg.senderId);
+        const usernameElement = this.document.createElement('span');
+        const usernameText = this.document.createTextNode(msg.senderId);
         usernameElement.appendChild(usernameText);
         msgElement.appendChild(usernameElement);
       }
 
-      var textElement = this.document.createElement('p');
-      var msgText = this.document.createTextNode(msg.content);
+      const textElement = this.document.createElement('p');
+      const msgText = this.document.createTextNode(msg.content);
       textElement.appendChild(msgText);
       msgElement.appendChild(textElement);
 
