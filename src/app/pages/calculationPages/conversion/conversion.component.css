@@ -18,15 +18,15 @@
   
   button {
     padding: 8px 16px;
-    background-color: #bfc6ce;
-    color: white;
+    background-color: orange;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #bfc6ce;
+    opacity: 0.8;
   }
   
   p {
