@@ -9,7 +9,7 @@ export class AuthService {
 
   private _isAuthenticated = false;
 
-  public static readonly serverIP = 'https://fcc0-178-122-215-147.ngrok-free.app';
+  public static readonly serverIP = 'https://67a7-46-182-52-139.ngrok-free.app';
   //public static readonly serverIP = 'http://localhost:8080';
 
 

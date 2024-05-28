@@ -33,7 +33,7 @@ export class ChatComponent implements OnInit {
       this.isChatHidden = false;
       const socket = new SockJS(AuthService.serverIP + '/ws');
       this.stompClient = Stomp.over(socket);
-      this.stompClient.connect({"ngrok-skip-browser-warning": "true"}, this.onConnected, this.onError);
+      this.stompClient.connect({'ngrok-skip-browser-warning': 'true'}, this.onConnected, this.onError);
     }
   }
 
@@ -46,7 +46,7 @@ export class ChatComponent implements OnInit {
       if (msg.type === 'JOIN') {
         msgElement.classList.add('event-message');
         msg.content = `${msg.senderId} joined!`;
-      } else if (msg.type === 'LEAVE') {
+      } else if (msg.type === 'LEAVER') {
         msgElement.classList.add('event-message');
         msg.content = `${msg.senderId} left!`;
       } else {
@@ -79,7 +79,7 @@ export class ChatComponent implements OnInit {
     // tell username to the server
     this.stompClient.send(
       '/app/chat.addUser',
-      {"ngrok-skip-browser-warning": "true"},
+      {},
       JSON.stringify({ senderId: this.username, type: 'JOIN' })
     );
 
@@ -109,7 +109,7 @@ export class ChatComponent implements OnInit {
       };
       this.stompClient.send(
         '/app/chat.sendMessage',
-        {"ngrok-skip-browser-warning": "true"},
+        {},
         JSON.stringify(chatMessage)
       );
       this.message = '';

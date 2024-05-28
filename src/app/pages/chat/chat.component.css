@@ -272,7 +272,7 @@ button.accent {
   }
 
   #chat-page ul {
-      height: calc(100% - 120px);
+      height: calc(100% - 150px);
   }
 
   #messageForm .input-group button {
